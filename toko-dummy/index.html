@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tokotoki — Katalog Produk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#">Toko<span>toki</span></a>
+      <label class="search" for="cari">
+        <span class="sr-only">Cari produk</span>
+        <input id="cari" type="search" placeholder="Cari produk, merek, atau tag…" autocomplete="off">
+      </label>
+      <button id="btnKeranjang" class="btn btn-cart" type="button">
+        Keranjang <span id="jumlahKeranjang" class="badge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>Temukan produk favoritmu</h1>
+      <p>Katalog contoh yang dimuat dengan Fetch API dari file JSON, lalu ditampilkan lewat manipulasi DOM.</p>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <div class="toolbar">
+      <div id="kategori" class="chips" role="group" aria-label="Filter kategori"></div>
+      <label class="sort">
+        Urutkan
+        <select id="urutkan">
+          <option value="default">Bawaan</option>
+          <option value="harga-asc">Harga: rendah ke tinggi</option>
+          <option value="harga-desc">Harga: tinggi ke rendah</option>
+          <option value="rating-desc">Rating tertinggi</option>
+          <option value="nama-asc">Nama A–Z</option>
+        </select>
+      </label>
+    </div>
+
+    <p id="status" class="status" role="status">Memuat data…</p>
+    <div id="daftarProduk" class="grid"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">Data contoh dari DummyJSON · dibuat dengan HTML, CSS, dan JavaScript</div>
+  </footer>
+
+  <dialog id="dialogDetail" class="dialog">
+    <button id="tutupDetail" class="close" type="button" aria-label="Tutup">×</button>
+    <div id="isiDetail"></div>
+  </dialog>
+
+  <dialog id="dialogKeranjang" class="dialog dialog-small">
+    <button id="tutupKeranjang" class="close" type="button" aria-label="Tutup">×</button>
+    <h2>Keranjang</h2>
+    <div id="isiKeranjang"></div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
